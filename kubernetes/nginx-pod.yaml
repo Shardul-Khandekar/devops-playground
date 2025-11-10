@@ -1,0 +1,16 @@
+# Version of the Kubernetes API being used
+apiVersion: v1
+# The type of Kubernetes object being defined
+kind: Pod
+# metadata to identify the pod, the name must be unique
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx-app
+# specification of the desired behavior of the pod
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:latest
+    ports:
+    - containerPort: 80
