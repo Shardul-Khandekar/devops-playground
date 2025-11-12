@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  # NodePort provides a way to expose the service on each Node's IP at a static port.
+  type: NodePort
+  # Whatever labels are specified here must match the labels in the deployment template.
+  selector:
+    app: nginx
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30007
+
+# ports:
+#   - port: 80 -> The port that the service will listen on. This is internal to the cluster.
+#     targetPort: 80 -> The port on the pod that the traffic will be directed to.
+#     nodePort: 30007 -> The port on each node where the application can be accessed from outside the cluster.
+# To access the Nginx application, use IP address of any node in the cluster along with the NodePort (30007 in this case).
