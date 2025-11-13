@@ -83,7 +83,6 @@ Deployments manage ReplicaSets and add higher-level features such as declarative
 Advantages of Deployments:
 
 - Perform rolling updates between versions.
-- Keep rollout history to allow rollbacks.
 - Automatically create and manage underlying ReplicaSets.
 
 The Deployment swaps or creates ReplicaSets when the Pod template changes (for example when the container image changes).
